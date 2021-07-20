@@ -3,6 +3,32 @@
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
+<h1> Blogposts </h1>
 
+<div class="container">
+    {% for blogpost in blogposts %}
+        <div class="row">
+            <h2> {{ blogpost.titre }} </h2>
+            <p> {{ blogpost.contenu }} </p>
+            <p>Publié le {{ blogpost.createdAt|date('d/m/Y') }} </p>
+        </div>
+    {% endfor %}
+</div>
+
+<br>
+
+<h1> Peintures </h1>
+
+<div class="container">
+    {% for peinture in peintures %}
+        <div class="row">
+            <h2> {{ peinture.nom }} </h2>
+            <img src="" alt="..."/>
+            <p> {{ peinture.description }} </p>
+            <p> {{ peinture.largeur }} </p>
+            <p> {{ peinture.hauteur}} </p>
+        </div>
+    {% endfor %}
+</div>
 
 {% endblock %}
