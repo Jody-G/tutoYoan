@@ -21,3 +21,7 @@ symfony console doctrine:fixtures:load
 ## Lancer des tests
 
 php bin/phpunit --testdox
+
+## Envoie des mails
+
+symfony console app:send-contact
