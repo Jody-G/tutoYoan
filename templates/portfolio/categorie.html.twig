@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PortfolioController!{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <h1> Categorie </h1>
+
+    <h2> {{ categorie.nom }} </h2>
+    <br>
+    <p> {{ categorie.description }} </p>
+
+    <h1> Peintures </h1>
+
+    {% for peinture in peintures %}
+        <p> {{ peinture.nom }} </p>
+    {% endfor %}
+    
+</div>
+{% endblock %}

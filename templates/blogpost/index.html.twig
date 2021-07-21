@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello blogpostController!{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <h1> Blogpost </h1>
+
+    {% for blogpost in blogposts %}
+        <h2> {{ blogpost.titre }} </h2>
+        <img src="" alt="..."/>
+        <p> {{ blogpost.contenu}} </p>
+        <p>Ajouter le {{ blogpost.createdAt|date('d/m/Y') }} </p>
+    {% endfor %}
+</div>
+<div class="d-flex justify-content-center">
+    {% do blogposts.setPageRange(2) %}
+    {{ knp_pagination_render(blogposts, 'elements/_pagination.html.twig') }}
+</div>
+{% endblock %}
